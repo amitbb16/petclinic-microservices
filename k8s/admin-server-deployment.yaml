@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: C:\Users\Amit\kmpose\kompose.exe convert
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: admin-server
+  # annotations:
+  #   kompose.cmd: C:\Users\Amit\kmpose\kompose.exe convert
+  #   kompose.version: 1.26.0 (40646f47)
+  # creationTimestamp: null
+  # labels:
+  #   io.kompose.service: admin-server
   name: admin-server
 spec:
   replicas: 1
@@ -15,13 +15,13 @@ spec:
       io.kompose.service: admin-server
   strategy: {}
   template:
-    metadata:
-      annotations:
-        kompose.cmd: C:\Users\Amit\kmpose\kompose.exe convert
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
-      labels:
-        io.kompose.service: admin-server
+    # metadata:
+    #   annotations:
+    #     kompose.cmd: C:\Users\Amit\kmpose\kompose.exe convert
+    #     kompose.version: 1.26.0 (40646f47)
+    #   creationTimestamp: null
+    #   labels:
+    #     io.kompose.service: admin-server
     spec:
       containers:
         - command:
@@ -37,6 +37,6 @@ spec:
             - containerPort: 9090
           resources:
             limits:
-              memory: "536870912"
+              memory: 512M
       restartPolicy: Always
 status: {}
