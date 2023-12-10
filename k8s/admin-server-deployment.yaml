@@ -12,7 +12,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: admin-server
+      service: admin-server-service
   strategy: {}
   template:
     # metadata:

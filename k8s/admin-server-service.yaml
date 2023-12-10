@@ -7,13 +7,13 @@ metadata:
   # creationTimestamp: null
   # labels:
   #   io.kompose.service: admin-server
-  name: admin-server
+  name: admin-server-service
 spec:
   ports:
-    - name: "9090"
+    - protocol: TCP
       port: 9090
       targetPort: 9090
   selector:
-    io.kompose.service: admin-server
+    app.kubernetes.io/name: admin-server
 status:
   loadBalancer: {}
