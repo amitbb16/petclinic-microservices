@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17 as builder
-WORKDIR application
+WORKDIR /application
 ARG ARTIFACT_NAME 
 COPY ${ARTIFACT_NAME}.jar application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
@@ -13,7 +13,7 @@ RUN chmod +x dockerize
 
 FROM eclipse-temurin:17
 
-WORKDIR application
+WORKDIR /application
 
 # Dockerize
 COPY --from=builder application/dockerize ./
