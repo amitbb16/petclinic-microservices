@@ -5,6 +5,12 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
+if (docker network ls | grep petnet | awk '{print $2}')
+then
+echo "petnet present"
+docker network rm $(docker network ls | grep petnet | (awk '{print $1}'))
+fi
+
 echo "Create localnet"
 docker network create petnet
 
