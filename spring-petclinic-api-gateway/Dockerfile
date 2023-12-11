@@ -17,7 +17,7 @@ WORKDIR /application
 # COPY --from=builder application/dockerize ./
 
 # ARG EXPOSED_PORT
-EXPOSE 9091
+EXPOSE 8080
 # ENV SPRING_PROFILES_ACTIVE docker
 
 COPY --from=builder application/dependencies/ ./
