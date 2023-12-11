@@ -12,7 +12,7 @@ docker network rm $(docker network ls | grep petnet | (awk '{print $1}'))
 fi
 
 echo "Create localnet"
-docker network create petnet
+docker network create --driver bridge petnet
 
 echo "Starting Monitoring"
 
